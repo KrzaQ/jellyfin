@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Jellyfin.Data.Enums;
-using Jellyfin.Extensions;
 using Jellyfin.LiveTv.Configuration;
 using MediaBrowser.Common.Configuration;
 using MediaBrowser.Controller.Dto;
@@ -321,7 +320,7 @@ public class GuideManager : IGuideManager
         {
             cancellationToken.ThrowIfCancellationRequested();
 
-            if (itemId.IsEmpty())
+            if (itemId.Equals(default))
             {
                 // Somehow some invalid data got into the db. It probably predates the boundary checking
                 continue;

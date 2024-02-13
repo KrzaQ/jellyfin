@@ -32,9 +32,24 @@ public class ClientCapabilitiesDto
     public bool SupportsMediaControl { get; set; }
 
     /// <summary>
+    /// Gets or sets a value indicating whether session supports content uploading.
+    /// </summary>
+    public bool SupportsContentUploading { get; set; }
+
+    /// <summary>
+    /// Gets or sets the message callback url.
+    /// </summary>
+    public string? MessageCallbackUrl { get; set; }
+
+    /// <summary>
     /// Gets or sets a value indicating whether session supports a persistent identifier.
     /// </summary>
     public bool SupportsPersistentIdentifier { get; set; }
+
+    /// <summary>
+    /// Gets or sets a value indicating whether session supports sync.
+    /// </summary>
+    public bool SupportsSync { get; set; }
 
     /// <summary>
     /// Gets or sets the device profile.
@@ -51,17 +66,7 @@ public class ClientCapabilitiesDto
     /// </summary>
     public string? IconUrl { get; set; }
 
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-    // TODO: Remove after 10.9
-    [Obsolete("Unused")]
-    [DefaultValue(false)]
-    public bool? SupportsContentUploading { get; set; }
 
-    // TODO: Remove after 10.9
-    [Obsolete("Unused")]
-    [DefaultValue(false)]
-    public bool? SupportsSync { get; set; }
-#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
     /// <summary>
     /// Convert the dto to the full <see cref="ClientCapabilities"/> model.
@@ -74,7 +79,10 @@ public class ClientCapabilitiesDto
             PlayableMediaTypes = PlayableMediaTypes,
             SupportedCommands = SupportedCommands,
             SupportsMediaControl = SupportsMediaControl,
+            SupportsContentUploading = SupportsContentUploading,
+            MessageCallbackUrl = MessageCallbackUrl,
             SupportsPersistentIdentifier = SupportsPersistentIdentifier,
+            SupportsSync = SupportsSync,
             DeviceProfile = DeviceProfile,
             AppStoreUrl = AppStoreUrl,
             IconUrl = IconUrl

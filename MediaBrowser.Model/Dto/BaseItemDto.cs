@@ -85,6 +85,11 @@ namespace MediaBrowser.Model.Dto
 
         public string PreferredMetadataCountryCode { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether [supports synchronize].
+        /// </summary>
+        public bool? SupportsSync { get; set; }
+
         public string Container { get; set; }
 
         /// <summary>
